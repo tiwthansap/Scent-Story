@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400;500&family=IBM+Plex+Sans+Thai:wght@200;300;400;500&display=swap">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=20260827-gift-balance">
 </head>
 <body>
 <div class="ticker" aria-hidden="true">
@@ -335,25 +335,60 @@
 <div class="overlay" id="overlay"></div>
 <aside class="drawer" id="drawer" aria-label="ตะกร้าสินค้า">
   <div class="drawer-head">
-    <span class="t">Cart</span>
+    <span class="t" id="drawer-title">Cart</span>
     <button class="icon-btn" id="drawer-close">Close</button>
   </div>
-  <div class="ship-bar">
+  <div class="ship-bar" id="ship-bar">
     <div style="display:flex;justify-content:space-between;font-family:var(--sans);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase">
       <span id="ship-msg">สั่งครบ ฿1,000 ส่งฟรี</span>
     </div>
     <div class="track"><div class="fill" id="ship-fill"></div></div>
   </div>
   <div class="drawer-body" id="cart-items"></div>
-  <div class="drawer-foot">
+  <div class="drawer-foot" id="cart-foot">
     <div class="tot"><span>รวม</span><span id="cart-total">฿0</span></div>
     <button class="btn" id="checkout">ชำระเงิน</button>
-    <span class="eyebrow" style="text-align:center">เว็บตัวอย่าง — ยังไม่ตัดเงินจริง</span>
+    <span class="eyebrow" style="text-align:center">พร้อมเพย์จะสร้าง QR ตามยอดสั่งซื้อ</span>
+  </div>
+  <div class="checkout-view" id="checkout-view" hidden>
+    <button class="checkout-back" id="checkout-back">กลับไปแก้ตะกร้า</button>
+    <div class="checkout-total">
+      <span>ยอดชำระ</span>
+      <strong id="checkout-total">฿0</strong>
+    </div>
+    <div class="checkout-items" id="checkout-items"></div>
+    <div class="promptpay-box">
+      <div class="promptpay-head">
+        <div>
+          <span class="eyebrow">PromptPay</span>
+          <h3>สแกนจ่ายด้วยพร้อมเพย์</h3>
+        </div>
+        <span class="tnum" id="promptpay-amount">฿0</span>
+      </div>
+      <div class="promptpay-qr">
+        <img id="promptpay-qr" alt="QR พร้อมเพย์สำหรับยอดชำระ" hidden>
+        <div class="promptpay-setup" id="promptpay-setup">
+          <span class="eyebrow">ตั้งค่าร้าน</span>
+          <p>ใส่เบอร์พร้อมเพย์ เลขบัตรประชาชน หรือนิติบุคคลของร้าน เพื่อสร้าง QR รับเงินตามยอดอัตโนมัติ</p>
+          <input id="promptpay-id-input" inputmode="numeric" autocomplete="off" placeholder="เช่น 0812345678">
+          <button class="btn" id="promptpay-save">บันทึกและสร้าง QR</button>
+        </div>
+      </div>
+      <div class="promptpay-meta">
+        <span>รับเงินโดย</span>
+        <strong id="promptpay-id-view">ยังไม่ได้ตั้งค่าเลขพร้อมเพย์ร้าน</strong>
+      </div>
+      <div class="checkout-actions">
+        <button class="ghost-btn" id="copy-payment">คัดลอกยอดชำระ</button>
+        <button class="btn" id="paid-note">โอนแล้ว</button>
+      </div>
+      <p class="checkout-note">หลังโอนเงิน กรุณาส่งสลิปให้ร้านเพื่อตรวจสอบและจัดส่งสินค้า</p>
+    </div>
   </div>
 </aside>
 
 <div class="toast" id="toast"></div>
 
-<script src="app.js"></script>
+<script src="app.js?v=20260827-checkout-promptpay-2"></script>
 </body>
 </html>

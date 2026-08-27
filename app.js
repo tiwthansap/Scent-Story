@@ -26,7 +26,8 @@ const IMG = {
   "d12": "img/d12.jpg",
   "emblem": "img/emblem.png",
   "emblemLight": "img/emblem-light.png",
-  "logofull": "img/logo-full.png"
+  "logofull": "img/logo-full.png",
+  "giftBox": "img/gift-story-box.png"
 };
 
 /* ================= data ================= */
@@ -40,51 +41,51 @@ const MOODS = [
 ];
 
 const P = [
-  { no:'01', en:'Golden Hour', th:'ห้วงแสงทองยามเย็น', moods:['warm','woody'], p1:790, p2:1190, best:true,
+  { no:'01', en:'Golden Hour', th:'ทิวสนธยาสีทอง', moods:['warm','woody'], p1:790, p2:1190, best:true,
     notes:['อำพัน','ไม้ซีดาร์','ทองก้าบีน'], en_notes:'Amber · Cedarwood · Tonka',
     pyr:['ส้มแมนดาริน, พริกไทยดำ','อำพันเรซิน, ไม้ซีดาร์','ทองก้าบีน, วานิลลาแห้ง'],
     story:'กลิ่นแรกของแบรนด์ ปรุงจากยี่สิบนาทีสุดท้ายก่อนพระอาทิตย์ตก ตอนที่แดดยังอุ่นอยู่บนพื้นไม้ อำพันให้ความหวานลึก ซีดาร์ตัดให้ไม่เลี่ยน เหมาะกับห้องนั่งเล่นที่มีคนแวะมานั่งบ่อย' },
-  { no:'02', en:'Slow Sunday', th:'วันอาทิตย์ที่ไม่รีบ', moods:['clean','fresh'], p1:590, p2:990, best:false,
+  { no:'02', en:'Slow Sunday', th:'วันอาทิตย์เนิบช้า', moods:['clean','fresh'], p1:590, p2:990, best:false,
     notes:['ชาขาว','ดอกแพร์','มัสก์ขาว'], en_notes:'White Tea · Pear Blossom · Musk',
     pyr:['ใบชาขาว, ผิวมะกรูดอ่อน','ดอกแพร์, ฟรีเซีย','มัสก์ขาว, ไม้ไผ่'],
     story:'เช้าวันที่ไม่มีนัด ชาที่ชงทิ้งไว้จนอุ่น ๆ แล้วลืมดื่ม กลิ่นนี้เบามากโดยตั้งใจ ใส่ในห้องนอนหรือห้องทำงานได้โดยไม่รบกวนสมาธิ' },
-  { no:'03', en:'After The Rain', th:'หลังฝนในสวนมะเดื่อ', moods:['fresh','woody'], p1:690, p2:1090, best:false,
+  { no:'03', en:'After The Rain', th:'สวนมะเดื่อหลังสายฝน', moods:['fresh','woody'], p1:690, p2:1090, best:false,
     notes:['มะเดื่อ','ไม้ซีดาร์','ใบไม้เขียว'], en_notes:'Fig · Cedar · Green Leaves',
     pyr:['ใบมะเดื่อ, ลูกแพร์เขียว','เนื้อมะเดื่อ, มะพร้าวอ่อน','ไม้ซีดาร์, ดินหลังฝน'],
     story:'ฝนตกตอนบ่ายแล้วหยุดกะทันหัน ใบไม้ยังเปียก อากาศเย็นลงสิบองศา มะเดื่อให้ความเขียวและครีมมี่พร้อมกัน เป็นกลิ่นที่คนไม่ชอบกลิ่นหวานมักจบที่กลิ่นนี้' },
-  { no:'04', en:'Goodnight', th:'ราตรีสวัสดิ์', moods:['warm'], p1:690, p2:1090, best:true,
+  { no:'04', en:'Goodnight', th:'ราตรีอันอ่อนโยน', moods:['warm'], p1:690, p2:1090, best:true,
     notes:['วานิลลา','มัสก์','ทองก้าบีน'], en_notes:'Vanilla · Musk · Tonka Bean',
     pyr:['วานิลลามาดากัสการ์','ดอกส้ม, อัลมอนด์','มัสก์นุ่ม, ทองก้าบีน'],
     story:'หวานแบบผ้าห่มไม่ใช่แบบขนม เราลดวานิลลาลงจากสูตรแรกสามครั้งกว่าจะได้ระดับที่จุดทิ้งไว้ในห้องนอนได้ทั้งคืนโดยไม่แน่นจมูก' },
-  { no:'05', en:'Purple Hour', th:'ชั่วโมงสีม่วง', moods:['floral','fresh'], p1:690, p2:1090, best:false,
+  { no:'05', en:'Purple Hour', th:'ทิวสนธยาสีม่วง', moods:['floral','fresh'], p1:690, p2:1090, best:false,
     notes:['ลาเวนเดอร์','คาโมมายล์','ซีดาร์'], en_notes:'Lavender · Chamomile · Cedar',
     pyr:['ลาเวนเดอร์โพรวองซ์, เบอร์กาม็อต','คาโมมายล์, เสจ','ซีดาร์, มัสก์อ่อน'],
     story:'ลาเวนเดอร์ที่ไม่เหมือนน้ำยาปรับผ้านุ่ม เราใช้ตัวจริงจากโพรวองซ์ที่มีความเขียวและขมนิด ๆ แล้วถ่วงด้วยคาโมมายล์ให้กลมขึ้น' },
-  { no:'06', en:'Night Jasmine', th:'มะลิกลางคืน', moods:['floral'], p1:690, p2:1090, best:false,
+  { no:'06', en:'Night Jasmine', th:'มะลิรัตติกาล', moods:['floral'], p1:690, p2:1090, best:false,
     notes:['มะลิ','กระดังงา','มัสก์ขาว'], en_notes:'Jasmine · Ylang Ylang · White Musk',
     pyr:['มะลิซ้อน, ใบเขียว','กระดังงา, ดอกส้ม','มัสก์ขาว, ไม้จันทน์อ่อน'],
     story:'มะลิที่หอมแรงที่สุดคือตอนสี่ทุ่ม กลิ่นนี้ทำให้บ้านไทยรู้สึกเป็นบ้านไทย แต่ตัดความหวานเข้มออกด้วยมัสก์ขาวจนใส่ห้องรับแขกได้สบาย' },
-  { no:'07', en:'First Light', th:'แสงแรกของเช้า', moods:['fresh'], p1:590, p2:990, best:false,
+  { no:'07', en:'First Light', th:'ปฐมแสงอรุณ', moods:['fresh'], p1:590, p2:990, best:false,
     notes:['เบอร์กาม็อต','เลมอน','เนโรลี'], en_notes:'Bergamot · Lemon · Neroli',
     pyr:['เลมอนซิซิลี, เบอร์กาม็อต','เนโรลี, ใบเวอร์บีน่า','ไม้ขาว, มัสก์ใส'],
     story:'กลิ่นสำหรับห้องครัวและห้องน้ำ ซิตรัสสดแบบผิวเปลือกที่เพิ่งบิด ไม่ใช่แบบน้ำยาล้างจาน เนโรลีช่วยให้ยังหอมอยู่หลังโน้ตซิตรัสจางไป' },
-  { no:'08', en:'Love Letter', th:'จดหมายที่ไม่ได้ส่ง', moods:['floral','warm'], p1:690, p2:1090, best:false,
+  { no:'08', en:'Love Letter', th:'จดหมายรักที่ไม่เคยส่ง', moods:['floral','warm'], p1:690, p2:1090, best:false,
     notes:['กุหลาบ','พีโอนี','แป้งนุ่ม'], en_notes:'Rose · Peony · Soft Powder',
     pyr:['ลิ้นจี่, พีโอนี','กุหลาบดามัสก์','แป้งไอริส, มัสก์'],
     story:'กุหลาบแบบจดหมายเก่า ไม่ใช่แบบช่อวาเลนไทน์ มีความเป็นแป้งและกระดาษปนอยู่ เป็นกลิ่นที่ลูกค้าซื้อเป็นของขวัญบ่อยที่สุด' },
-  { no:'09', en:'Salt & Stone', th:'เกลือกับหิน', moods:['fresh','clean'], p1:690, p2:1090, best:false,
+  { no:'09', en:'Salt & Stone', th:'ลมเกลือบนศิลา', moods:['fresh','clean'], p1:690, p2:1090, best:false,
     notes:['เกลือทะเล','ไม้เกยตื้น','โอโซน'], en_notes:'Sea Salt · Driftwood · Ozone',
     pyr:['ลมทะเล, เกลือ','สาหร่าย, หินเปียก','ไม้เกยตื้น, มัสก์เย็น'],
     story:'ไม่ใช่กลิ่นครีมกันแดด เราตั้งใจทำให้เป็นทะเลตอนเช้าที่ยังไม่มีคน มีความเค็มและเย็นของหิน เหมาะกับห้องที่แสงเข้าเยอะ' },
-  { no:'10', en:'Old Temple', th:'กลิ่นไม้เก่า', moods:['woody','warm'], p1:790, p2:1190, best:false,
+  { no:'10', en:'Old Temple', th:'วัดเก่าใต้เงาไม้', moods:['woody','warm'], p1:790, p2:1190, best:false,
     notes:['ไม้จันทน์','อำพัน','เวติเวอร์'], en_notes:'Sandalwood · Amber · Vetiver',
     pyr:['พริกไทยชมพู, ลูกจันทน์','ไม้จันทน์อินเดีย, อำพัน','เวติเวอร์, ซีดาร์แห้ง'],
     story:'กลิ่นของศาลาไม้ที่โดนแดดมาสามสิบปี สงบและแห้ง ไม่มีความหวานเลย คนทำงานสมาธิหรือเล่นโยคะที่บ้านมักเลือกกลิ่นนี้' },
-  { no:'11', en:'Sun-dried', th:'ผ้าตากแดด', moods:['clean'], p1:590, p2:990, best:true,
+  { no:'11', en:'Sun-dried', th:'ผ้าฝ้ายกลางแดด', moods:['clean'], p1:590, p2:990, best:true,
     notes:['ผ้าฝ้าย','ลิลลี่','มัสก์นุ่ม'], en_notes:'Cotton · Lily · Soft Musk',
     pyr:['ผ้าฝ้ายสะอาด, อากาศเย็น','ลิลลี่ออฟเดอะแวลลีย์','มัสก์นุ่ม, ไม้ขาว'],
     story:'กลิ่นผ้าปูที่นอนที่เพิ่งเก็บลงมาจากราวตอนบ่าย เรียบที่สุดในคอลเลกชัน และเป็นกลิ่นที่คนซื้อซ้ำมากที่สุด เพราะใส่ห้องไหนก็ไม่มีทางผิด' },
-  { no:'12', en:'Midnight', th:'เที่ยงคืน', moods:['warm','woody'], p1:790, p2:1190, best:false,
+  { no:'12', en:'Midnight', th:'ราตรีลึก', moods:['warm','woody'], p1:790, p2:1190, best:false,
     notes:['อำพันดำ','อู๊ด','หนัง'], en_notes:'Black Amber · Oud · Leather',
     pyr:['ลูกพลัมแห้ง, พริกไทยดำ','อำพันดำ, อู๊ด','หนังนุ่ม, ยาสูบ'],
     story:'บทสุดท้ายของคอลเลกชัน เข้มที่สุด มืดที่สุด อำพันดำกับอู๊ดทำให้ห้องรู้สึกเหมือนบาร์เล็ก ๆ ตอนดึก ใช้ก้านแค่ 3–4 ก้านก็พอสำหรับห้องปกติ'}
@@ -155,12 +156,33 @@ el('#filters').addEventListener('click', e => {
 });
 
 /* gift media */
-el('#gift-media').innerHTML = [P[0], P[3], P[10], P[5]]
-  .map(p => `<img src="${p.det}" alt="ก้านไม้หอม ${p.en}" loading="lazy">`).join('');
+el('#gift-media').innerHTML =
+  `<img src="${IMG.giftBox}" alt="The Story Box เซ็ตก้านไม้หอม" loading="lazy">`;
 
 /* ================= cart ================= */
 let cart = [];
 const FREE = 1000;
+const PROMPTPAY_ID = ''; // ใส่เบอร์พร้อมเพย์ร้าน เช่น '0812345678' หรือเลขนิติบุคคล 13 หลัก
+const PROMPTPAY_STORE_KEY = 'scentStoryPromptPayId';
+let checkoutMode = false;
+
+const cartTotal = () => cart.reduce((s, c) => s + c.qty * c.price, 0);
+const cartCount = () => cart.reduce((s, c) => s + c.qty, 0);
+const cleanPromptPayId = id => String(id || '').replace(/\D/g, '');
+const looksLikeTestPromptPayId = id => /^(\d)\1+$/.test(cleanPromptPayId(id));
+const validPromptPayId = id => {
+  const clean = cleanPromptPayId(id);
+  return [10, 13, 15].includes(clean.length) && !looksLikeTestPromptPayId(clean);
+};
+const storedPromptPayId = localStorage.getItem(PROMPTPAY_STORE_KEY);
+let promptPayId = validPromptPayId(storedPromptPayId) ? storedPromptPayId : PROMPTPAY_ID;
+const promptPayUrl = (id, amount) =>
+  `https://promptpay.io/${encodeURIComponent(cleanPromptPayId(id))}/${amount.toFixed(2)}.png`;
+function maskPromptPayId(id) {
+  const clean = cleanPromptPayId(id);
+  if (clean.length === 10) return clean.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
+  return clean ? 'เลขพร้อมเพย์ลงท้าย ' + clean.slice(-4) : 'ยังไม่ได้ตั้งค่าเลขพร้อมเพย์ร้าน';
+}
 
 function addItem(item) {
   const k = cart.find(c => c.key === item.key);
@@ -169,8 +191,8 @@ function addItem(item) {
   toast(`เพิ่ม ${item.name} ลงตะกร้าแล้ว`);
 }
 function renderCart() {
-  const n = cart.reduce((s, c) => s + c.qty, 0);
-  const total = cart.reduce((s, c) => s + c.qty * c.price, 0);
+  const n = cartCount();
+  const total = cartTotal();
   el('#cart-count').textContent = n;
   el('#cart-total').textContent = baht(total);
   el('#checkout').disabled = n === 0;
@@ -200,6 +222,7 @@ function renderCart() {
         </div>
       </div>
     </div>`).join('') : '<div class="empty">ยังไม่มีสินค้าในตะกร้า</div>';
+  if (checkoutMode) renderCheckout();
 }
 el('#cart-items').addEventListener('click', e => {
   const q = e.target.closest('[data-q]'), r = e.target.closest('[data-rm]');
@@ -213,10 +236,42 @@ el('#cart-items').addEventListener('click', e => {
 renderCart();
 
 /* ================= drawer / menu / toast ================= */
+function setCheckout(on) {
+  checkoutMode = on && cart.length > 0;
+  el('#drawer-title').textContent = checkoutMode ? 'Checkout' : 'Cart';
+  el('#ship-bar').hidden = checkoutMode;
+  el('#cart-items').hidden = checkoutMode;
+  el('#cart-foot').hidden = checkoutMode;
+  el('#checkout-view').hidden = !checkoutMode;
+  if (checkoutMode) renderCheckout();
+}
+function renderCheckout() {
+  const total = cartTotal();
+  el('#checkout-total').textContent = baht(total);
+  el('#promptpay-amount').textContent = baht(total);
+  el('#checkout-items').innerHTML = cart.map(c => `
+    <div class="checkout-line">
+      <div>
+        <div class="n">${c.name}</div>
+        <div class="v">${c.variant} · ${c.qty} ชิ้น</div>
+      </div>
+      <span class="price tnum">${baht(c.price * c.qty)}</span>
+    </div>`).join('');
+
+  const clean = cleanPromptPayId(promptPayId);
+  const ready = validPromptPayId(clean);
+  el('#promptpay-id-view').textContent = ready ? maskPromptPayId(clean) : 'ยังไม่ได้ตั้งค่าเลขพร้อมเพย์ร้าน';
+  el('#promptpay-setup').hidden = ready;
+  el('#promptpay-qr').hidden = !ready;
+  if (ready) {
+    el('#promptpay-qr').src = promptPayUrl(clean, total);
+  }
+}
 function openDrawer(on) {
   el('#drawer').classList.toggle('on', on);
   el('#overlay').classList.toggle('on', on);
   document.body.style.overflow = on ? 'hidden' : '';
+  if (!on) setCheckout(false);
 }
 el('#cart-btn').onclick = () => openDrawer(true);
 el('#drawer-close').onclick = () => openDrawer(false);
@@ -236,7 +291,29 @@ function toast(msg) {
   clearTimeout(tId); tId = setTimeout(() => t.classList.remove('on'), 2600);
 }
 
-el('#checkout').onclick = () => toast('นี่เป็นเว็บตัวอย่าง ระบบชำระเงินยังไม่เปิดใช้งาน');
+el('#checkout').onclick = () => {
+  if (!cart.length) return toast('ยังไม่มีสินค้าในตะกร้า');
+  setCheckout(true);
+};
+el('#checkout-back').onclick = () => setCheckout(false);
+el('#promptpay-save').onclick = () => {
+  const id = cleanPromptPayId(el('#promptpay-id-input').value);
+  if (!validPromptPayId(id)) return toast('กรุณาใส่เลขพร้อมเพย์ 10, 13 หรือ 15 หลัก');
+  promptPayId = id;
+  localStorage.setItem(PROMPTPAY_STORE_KEY, id);
+  renderCheckout();
+  toast('สร้าง QR พร้อมเพย์แล้ว');
+};
+el('#copy-payment').onclick = async () => {
+  const text = `Scent Story ยอดชำระ ${baht(cartTotal())} พร้อมเพย์ ${maskPromptPayId(promptPayId)}`;
+  try {
+    await navigator.clipboard.writeText(text);
+    toast('คัดลอกยอดชำระแล้ว');
+  } catch {
+    toast('คัดลอกไม่สำเร็จ กรุณาจดเลขและยอดชำระ');
+  }
+};
+el('#paid-note').onclick = () => toast('ขอบคุณค่ะ กรุณาส่งสลิปให้ร้านเพื่อตรวจสอบ');
 el('#news-form').addEventListener('submit', e => {
   e.preventDefault(); e.target.reset(); toast('ขอบคุณ! เราจะส่งจดหมายฉบับแรกให้เร็ว ๆ นี้');
 });
@@ -251,7 +328,7 @@ document.addEventListener('click', e => {
   }
   const g = e.target.closest('[data-add-gift]');
   if (g) {
-    addItem({ key: 'gift', name: 'The Story Box', variant: 'เซ็ต 3 กลิ่น · 50 มล.', price: 1290, qty: 1, img: P[0].det });
+    addItem({ key: 'gift', name: 'The Story Box', variant: 'เซ็ต 3 กลิ่น · 50 มล.', price: 1290, qty: 1, img: IMG.giftBox });
     openDrawer(true);
   }
 });
